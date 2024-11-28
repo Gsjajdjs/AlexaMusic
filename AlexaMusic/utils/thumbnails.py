@@ -45,20 +45,20 @@ async def gen_thumb(videoid):
                 title = re.sub("\W+", " ", title)
                 title = title.title()
             except:
-                title = "Unsupported Title"
+                title = "Geçersiz yazı"
             try:
                 duration = result["duration"]
             except:
-                duration = "Unknown Mins"
+                duration = "Geçersiz Dakika"
             thumbnail = result["thumbnails"][0]["url"].split("?")[0]
             try:
                 views = result["viewCount"]["short"]
             except:
-                views = "Unknown Views"
+                views = "Geçersiz Izlenme"
             try:
                 channel = result["channel"]["name"]
             except:
-                channel = "Unknown Channel"
+                channel = "Gecersiz Kanal"
 
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
@@ -90,10 +90,10 @@ async def gen_thumb(videoid):
         name_font = ImageFont.truetype("assets/font.ttf", 30)
         para = textwrap.wrap(title, width=30)
         j = 0
-        draw.text((5, 5), f"Alexa MusicBot", fill="white", font=name_font)
+        draw.text((5, 5), f"Lethan MusicBot", fill="white", font=name_font)
         draw.text(
             (600, 150),
-            "NOW PLAYING",
+            "Çalıyor..",
             fill="white",
             stroke_width=3,
             stroke_fill="black",
@@ -161,20 +161,20 @@ async def gen_qthumb(videoid):
                 title = re.sub("\W+", " ", title)
                 title = title.title()
             except:
-                title = "Unsupported Title"
+                title = "Desteklenmeyen Yazı"
             try:
                 duration = result["duration"]
             except:
-                duration = "Unknown Mins"
+                duration = "Gecersiz Dakika"
             thumbnail = result["thumbnails"][0]["url"].split("?")[0]
             try:
                 views = result["viewCount"]["short"]
             except:
-                views = "Unknown Views"
+                views = "Gecersiz Izlenme"
             try:
                 channel = result["channel"]["name"]
             except:
-                channel = "Unknown Channel"
+                channel = "Gecersiz Kanal"
 
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
@@ -206,10 +206,10 @@ async def gen_qthumb(videoid):
         name_font = ImageFont.truetype("assets/font.ttf", 30)
         para = textwrap.wrap(title, width=30)
         j = 0
-        draw.text((5, 5), f"Alexa MusicBot", fill="white", font=name_font)
+        draw.text((5, 5), f"Lethan MusicBot", fill="white", font=name_font)
         draw.text(
             (600, 150),
-            "ADDED THIS SONG IN QUEUE",
+            "Şarkı Akışa Eklenildi",
             fill="white",
             stroke_width=3,
             stroke_fill="black",
@@ -250,7 +250,7 @@ async def gen_qthumb(videoid):
         )
         draw.text(
             (600, 550),
-            f"Owner : Jankari Ki Duniya",
+            f"Owner : Lethan",
             (255, 255, 255),
             font=arial,
         )
